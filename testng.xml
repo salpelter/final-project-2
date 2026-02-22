@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="desktopAndMobile" thread-count="2" parallel="tests">
+    <test name="desktopChrome">
+        <parameter name="isMobile" value="false" />
+        <parameter name="browserType" value="chrome" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+    <test name="desktopFirefox">
+        <parameter name="isMobile" value="false" />
+        <parameter name="browserType" value="firefox" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+    <test name="desktopWebkit">
+        <parameter name="isMobile" value="false" />
+        <parameter name="browserType" value="webkit" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+
+    <test name="mobileChrome">
+        <parameter name="isMobile" value="true" />
+        <parameter name="browserType" value="chrome" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+    <test name="mobileFirefox">
+        <parameter name="isMobile" value="true" />
+        <parameter name="browserType" value="firefox" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+    <test name="mobileWebkit">
+        <parameter name="isMobile" value="true" />
+        <parameter name="browserType" value="webkit" />
+        <classes>
+            <class name="ge.tbc.testautomation.tests.OffersTest" />
+        </classes>
+    </test>
+</suite>
