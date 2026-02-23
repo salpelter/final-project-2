@@ -7,7 +7,7 @@ public class OffersTest extends BaseTest {
     @Test(priority = 1)
     public void goToOffersPage() {
         commonSteps
-                .openMenu(this.isMobile)
+                .openMenu(isMobile)
                 .clickOnOffersLink();
 
         offersSteps

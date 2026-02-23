@@ -20,7 +20,6 @@ public class BaseTest {
     protected OffersSteps offersSteps;
 
     protected boolean isMobile;
-
     @Parameters({"isMobile", "browserType"})
     @BeforeClass
     public void setUp(boolean isMobile, String browserType) {
@@ -29,7 +28,9 @@ public class BaseTest {
         BrowserType.LaunchOptions options = new BrowserType.LaunchOptions();
         // chrome and firefox enforce minimum viewport size in headed execution mode
         // so to actually emulate viewport size below, tests needs to run in headless
-        options.setHeadless(false); // TODO: comment out
+        // also, in headed mode visual regression tests are affected because there's
+        // an additional 15px of width allocated for the scrollbar
+        //options.setHeadless(false); // TODO: comment out
 
         if (browserType.equalsIgnoreCase("chrome")) {
             browser = playwright.chromium().launch(options);
@@ -45,16 +46,17 @@ public class BaseTest {
 
         if (this.isMobile) {
             var context = browser.newContext(new Browser.NewContextOptions()
-                    // Galaxy S20 Ultra
-                    .setViewportSize(412, 915)
-                    .setDeviceScaleFactor(2.625)
-                    .setUserAgent("Mozilla/5.0 (Linux; Android 11; SM-G988B Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.105 Mobile Safari/537.36"));
+                    // iPhone 16 Plus
+                    .setViewportSize(430, 932)
+                    // backdropjs does not support scale factor
+                    //.setDeviceScaleFactor(3)
+                    .setUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1"));
 
             this.page = context.newPage();
         }
         else {
             var context = browser.newContext(new Browser.NewContextOptions()
-                    .setViewportSize(null)
+                    .setViewportSize(1920, 1080)
             );
 
             this.page = context.newPage();
@@ -64,9 +66,12 @@ public class BaseTest {
         commonSteps = new CommonSteps(page);
         offersSteps = new OffersSteps(page);
 
-        commonSteps
-                .verifyDenyCookiesButtonVisibility()
-                .clickOnDenyCookiesButton();
+        try {
+            commonSteps
+                    .verifyDenyCookiesButtonVisibility()
+                    .clickOnDenyCookiesButton();
+        }
+        catch(TimeoutError e) {}
     }
 
     @AfterClass

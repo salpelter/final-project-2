@@ -2,12 +2,12 @@ package ge.tbc.testautomation.steps;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.LoadState;
 import ge.tbc.testautomation.pages.OffersPage;
 
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
-
-import static com.microsoft.playwright.options.WaitForSelectorState.VISIBLE;
 
 public class OffersSteps {
     Page page;
@@ -35,7 +35,7 @@ public class OffersSteps {
     }
 
     public OffersSteps pickRandomOffer() {
-        offersPage.offerBlocks.nth(0).hover(); // make sure loaded
+        offersPage.offerBlocks.nth(0).hover();
 
         var offersCount = offersPage.offerBlocks.count();
 
