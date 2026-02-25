@@ -1,12 +1,16 @@
 package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
+import ge.tbc.testautomation.db.DbConfig;
 import ge.tbc.testautomation.steps.CommonSteps;
+import ge.tbc.testautomation.steps.LocationsSteps;
 import ge.tbc.testautomation.steps.OffersSteps;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import java.util.HashMap;
 import java.util.List;
 
 import static ge.tbc.testautomation.data.Constants.HOME_PAGE_URL;
@@ -18,6 +22,7 @@ public class BaseTest {
 
     protected CommonSteps commonSteps;
     protected OffersSteps offersSteps;
+    protected LocationsSteps locationsSteps;
 
     protected boolean isMobile;
     @Parameters({"isMobile", "browserType"})
@@ -30,7 +35,7 @@ public class BaseTest {
         // so to actually emulate viewport size below, tests needs to run in headless
         // also, in headed mode visual regression tests are affected because there's
         // an additional 15px of width allocated for the scrollbar
-        //options.setHeadless(false); // TODO: comment out
+        // options.setHeadless(false); // TODO: comment out
 
         if (browserType.equalsIgnoreCase("chrome")) {
             browser = playwright.chromium().launch(options);
@@ -44,8 +49,12 @@ public class BaseTest {
 
         this.isMobile = isMobile;
 
+        var contextOptions = new Browser.NewContextOptions()
+                .setGeolocation(41.693408, 44.801498)
+                .setPermissions(List.of("geolocation"));
+
         if (this.isMobile) {
-            var context = browser.newContext(new Browser.NewContextOptions()
+            var context = browser.newContext(contextOptions
                     // iPhone 16 Plus
                     .setViewportSize(430, 932)
                     // backdropjs does not support scale factor
@@ -55,7 +64,7 @@ public class BaseTest {
             this.page = context.newPage();
         }
         else {
-            var context = browser.newContext(new Browser.NewContextOptions()
+            var context = browser.newContext(contextOptions
                     .setViewportSize(1920, 1080)
             );
 
@@ -65,6 +74,7 @@ public class BaseTest {
 
         commonSteps = new CommonSteps(page);
         offersSteps = new OffersSteps(page);
+        locationsSteps = new LocationsSteps(page);
 
         try {
             commonSteps

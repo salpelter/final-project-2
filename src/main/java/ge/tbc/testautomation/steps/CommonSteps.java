@@ -40,4 +40,10 @@ public class CommonSteps {
 
         return this;
     }
+
+    public CommonSteps clickOnLocationsLink() {
+        commonPage.locationsLink.click();
+
+        return this;
+    }
 }

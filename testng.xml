@@ -7,6 +7,7 @@
         <parameter name="browserType" value="chrome" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
     <test name="desktopFirefox">
@@ -14,6 +15,7 @@
         <parameter name="browserType" value="firefox" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
     <test name="desktopWebkit">
@@ -21,6 +23,7 @@
         <parameter name="browserType" value="webkit" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
 
@@ -29,6 +32,7 @@
         <parameter name="browserType" value="chrome" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
     <test name="mobileFirefox">
@@ -36,6 +40,7 @@
         <parameter name="browserType" value="firefox" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
     <test name="mobileWebkit">
@@ -43,6 +48,7 @@
         <parameter name="browserType" value="webkit" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsTest" />
         </classes>
     </test>
 </suite>
