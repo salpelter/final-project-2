@@ -3,7 +3,7 @@ package ge.tbc.testautomation.tests;
 import ge.tbc.testautomation.data.OffersDataProvider;
 import org.testng.annotations.Test;
 
-public class OffersTest extends BaseTest {
+public class OffersTests extends BaseTest {
     @Test(priority = 1)
     public void goToOffersPage() {
         commonSteps

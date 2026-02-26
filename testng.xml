@@ -6,24 +6,27 @@
         <parameter name="isMobile" value="false" />
         <parameter name="browserType" value="chrome" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
     <test name="desktopFirefox">
         <parameter name="isMobile" value="false" />
         <parameter name="browserType" value="firefox" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
     <test name="desktopWebkit">
         <parameter name="isMobile" value="false" />
         <parameter name="browserType" value="webkit" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
 
@@ -31,24 +34,27 @@
         <parameter name="isMobile" value="true" />
         <parameter name="browserType" value="chrome" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
     <test name="mobileFirefox">
         <parameter name="isMobile" value="true" />
         <parameter name="browserType" value="firefox" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
     <test name="mobileWebkit">
         <parameter name="isMobile" value="true" />
         <parameter name="browserType" value="webkit" />
         <classes>
-            <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OffersTests" />
+            <class name="ge.tbc.testautomation.tests.LocationsTests" />
+            <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
 </suite>

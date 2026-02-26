@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static ge.tbc.testautomation.data.Constants.AREA;
 
-public class LocationsTest extends BaseTest {
+public class LocationsTests extends BaseTest {
     @Test(priority = 1)
     public void goToLocationsPage() {
         commonSteps

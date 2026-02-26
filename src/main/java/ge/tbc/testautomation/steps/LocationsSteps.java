@@ -22,11 +22,12 @@ public class LocationsSteps {
     public LocationsSteps enterLocationArea(String area) {
         this.area = area;
 
-        var oldAddress = locationsPage.addresses.nth(0);
-        locationsPage.inputField.fill(area);
-        oldAddress.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+        locationsPage.inputField.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 
-        locationsPage.addresses.nth(0).hover();
+        locationsPage.inputField.fill(area);
+        page.waitForTimeout(1000);
+
+        locationsPage.addresses.nth(0).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 
         return this;
     }

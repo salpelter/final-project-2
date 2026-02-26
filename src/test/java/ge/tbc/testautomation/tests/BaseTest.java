@@ -1,16 +1,11 @@
 package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
-import ge.tbc.testautomation.db.DbConfig;
-import ge.tbc.testautomation.steps.CommonSteps;
-import ge.tbc.testautomation.steps.LocationsSteps;
-import ge.tbc.testautomation.steps.OffersSteps;
+import ge.tbc.testautomation.steps.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
-import java.util.HashMap;
 import java.util.List;
 
 import static ge.tbc.testautomation.data.Constants.HOME_PAGE_URL;
@@ -23,6 +18,9 @@ public class BaseTest {
     protected CommonSteps commonSteps;
     protected OffersSteps offersSteps;
     protected LocationsSteps locationsSteps;
+    protected ConsumerLoansSteps consumerLoansSteps;
+
+    protected PageApiSteps pageApiSteps;
 
     protected boolean isMobile;
     @Parameters({"isMobile", "browserType"})
@@ -57,7 +55,7 @@ public class BaseTest {
             var context = browser.newContext(contextOptions
                     // iPhone 16 Plus
                     .setViewportSize(430, 932)
-                    // backdropjs does not support scale factor
+                    // backstopjs does not support scale factor
                     //.setDeviceScaleFactor(3)
                     .setUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1"));
 
@@ -75,6 +73,9 @@ public class BaseTest {
         commonSteps = new CommonSteps(page);
         offersSteps = new OffersSteps(page);
         locationsSteps = new LocationsSteps(page);
+        consumerLoansSteps = new ConsumerLoansSteps(page);
+
+        pageApiSteps = new PageApiSteps();
 
         try {
             commonSteps
