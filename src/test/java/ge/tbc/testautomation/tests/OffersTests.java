@@ -1,9 +1,17 @@
 package ge.tbc.testautomation.tests;
 
 import ge.tbc.testautomation.data.OffersDataProvider;
+import ge.tbc.testautomation.steps.OffersSteps;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+@Test(groups = {"View offers (SCRUM-T29)"})
 public class OffersTests extends BaseTest {
+    @BeforeClass
+    public void initialize() {
+        offersSteps = new OffersSteps(page);
+    }
+
     @Test(priority = 1)
     public void goToOffersPage() {
         commonSteps

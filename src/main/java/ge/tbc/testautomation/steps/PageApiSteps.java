@@ -1,22 +1,20 @@
 package ge.tbc.testautomation.steps;
 
 import ge.tbc.testautomation.api.client.PageApi;
-import ge.tbc.testautomation.data.models.PageResponse;
-
-import static ge.tbc.testautomation.data.Constants.CONSUMER_LOANS_PAGE_ID;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 
 public class PageApiSteps {
     private PageApi api = new PageApi();
 
-    public PageResponse response;
+    public ValidatableResponse response;
 
-    public PageApiSteps retrieveConsumerLoansPage() {
+    public PageApiSteps retrievePage(String pageId) {
         this.response =
         api
-            .getPage(CONSUMER_LOANS_PAGE_ID)
-        .then()
-            .extract()
-            .as(PageResponse.class);
+            .getPage(pageId)
+        .then();
 
         return this;
     }

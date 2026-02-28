@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.data.models;
+package ge.tbc.testautomation.data.models.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

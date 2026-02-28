@@ -1,10 +1,15 @@
 package ge.tbc.testautomation.util;
 
-import ge.tbc.testautomation.data.models.SectionComponentsItem;
+import ge.tbc.testautomation.data.models.response.ListItem;
+import ge.tbc.testautomation.data.models.response.PageNotFoundResponse;
+import ge.tbc.testautomation.data.models.response.PageResponse;
+import ge.tbc.testautomation.data.models.response.SectionComponentsItem;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidationHelper {
     public static void validateTitles(List<SectionComponentsItem> sectionComponents, List<String> actualTitles) {
@@ -43,5 +48,29 @@ public class ValidationHelper {
         }
 
         Assert.assertEquals(apiListItems, actualListItems);
+    }
+
+    public static void validatePageResponseFieldsNonNull(PageResponse response) {
+        var sectionComponents = response.getSectionComponents();
+
+        for (SectionComponentsItem sectionComponent : sectionComponents) {
+            if (!sectionComponent.getInputs().isShowList() || !sectionComponent.getType().equals("ctaSection")) {
+                // no list
+                continue;
+            }
+
+            assertThat(sectionComponent.getInputs().getTitle())
+                    .isNotNull();
+
+            var list = sectionComponent.getInputs().getList();
+            for (ListItem listItem : list) {
+                assertThat(listItem.getLabel())
+                        .isNotNull();
+            }
+        }
+    }
+
+    public static void validatePageNotFoundResponseFieldsNonNull(PageNotFoundResponse response) {
+        assertThat(response).hasNoNullFieldsOrProperties();
     }
 }

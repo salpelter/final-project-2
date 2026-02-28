@@ -71,11 +71,6 @@ public class BaseTest {
         page.navigate(HOME_PAGE_URL);
 
         commonSteps = new CommonSteps(page);
-        offersSteps = new OffersSteps(page);
-        locationsSteps = new LocationsSteps(page);
-        consumerLoansSteps = new ConsumerLoansSteps(page);
-
-        pageApiSteps = new PageApiSteps();
 
         try {
             commonSteps

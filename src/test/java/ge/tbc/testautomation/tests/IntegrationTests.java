@@ -1,30 +1,45 @@
 package ge.tbc.testautomation.tests;
 
+import ge.tbc.testautomation.data.models.response.PageResponse;
+import ge.tbc.testautomation.steps.ConsumerLoansSteps;
+import ge.tbc.testautomation.steps.PageApiSteps;
 import ge.tbc.testautomation.util.ValidationHelper;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static ge.tbc.testautomation.data.Constants.*;
 
 public class IntegrationTests extends BaseTest {
+    @BeforeClass
+    public void initialize() {
+        consumerLoansSteps = new ConsumerLoansSteps(page);
+        pageApiSteps = new PageApiSteps();
+    }
+
     @Test
     public void validateUiAndApiContentMatch() {
         // this specific page was chosen for the sake of simplicity
         page.navigate(HOME_PAGE_URL + LANGUAGE_PATH + CONSUMER_LOANS_PATH);
 
         pageApiSteps
-                .retrieveConsumerLoansPage();
+                .retrievePage(CONSUMER_LOANS_PAGE_ID);
 
         consumerLoansSteps
                 .retrievePageTitles()
                 .retrievePageListItems();
 
+        var response = pageApiSteps.response
+                .assertThat()
+                .statusCode(200)
+                .extract().as(PageResponse.class);
+
         ValidationHelper.validateTitles(
-                pageApiSteps.response.getSectionComponents(),
+                response.getSectionComponents(),
                 consumerLoansSteps.titles
         );
 
         ValidationHelper.validateListItems(
-                pageApiSteps.response.getSectionComponents(),
+                response.getSectionComponents(),
                 consumerLoansSteps.listItems
         );
     }

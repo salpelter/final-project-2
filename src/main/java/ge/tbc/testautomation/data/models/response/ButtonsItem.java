@@ -1,10 +1,10 @@
-package ge.tbc.testautomation.data.models;
+package ge.tbc.testautomation.data.models.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ItemsItem {
+public class ButtonsItem {
 	@JsonProperty("$id")
 	private String id;
 
@@ -14,18 +14,21 @@ public class ItemsItem {
 	@JsonProperty("$updatedAt")
 	private String updatedAt;
 
-	@JsonProperty("isExternal")
-	private boolean isExternal;
+	@JsonProperty("additionalInfo")
+	private AdditionalInfo additionalInfo;
+
+	@JsonProperty("size")
+	private String size;
 
 	@JsonProperty("key")
 	private String key;
 
-	@JsonProperty("target")
-	private String target;
-
 	@JsonProperty("label")
 	private String label;
 
-	@JsonProperty("url")
-	private String url;
+	@JsonProperty("type")
+	private String type;
+
+	@JsonProperty("link")
+	private Link link;
 }

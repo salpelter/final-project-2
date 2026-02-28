@@ -57,4 +57,10 @@
             <class name="ge.tbc.testautomation.tests.IntegrationTests" />
         </classes>
     </test>
+
+    <test name="api">
+        <classes>
+            <class name="ge.tbc.testautomation.tests.ApiTests" />
+        </classes>
+    </test>
 </suite>
