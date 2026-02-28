@@ -3,7 +3,6 @@ module.exports = async (page, scenario, viewport) => {
 
   await page.waitForLoadState('networkidle');
 
-  // TODO: verify removing locators is okay
   await page.waitForTimeout(5000);
 
   try {

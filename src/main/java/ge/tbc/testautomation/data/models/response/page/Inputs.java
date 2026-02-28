@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.data.models.response;
+package ge.tbc.testautomation.data.models.response.page;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

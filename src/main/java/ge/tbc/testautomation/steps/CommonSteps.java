@@ -1,6 +1,8 @@
 package ge.tbc.testautomation.steps;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.WaitForSelectorState;
 import ge.tbc.testautomation.pages.CommonPage;
 import io.qameta.allure.Step;
 
@@ -13,7 +15,7 @@ public class CommonSteps {
         commonPage = new CommonPage(page);
     }
 
-    @Step("Open navigation menu")
+    @Step("Open navigation mega menu")
     public CommonSteps openMenu(boolean isMobile) {
         if (isMobile) {
             commonPage.mobileHamburgerMenu.click();
@@ -34,7 +36,8 @@ public class CommonSteps {
 
     @Step("Verify that the deny cookies button is visible")
     public CommonSteps verifyDenyCookiesButtonVisibility() {
-        commonPage.denyCookiesButton.isVisible();
+        commonPage.denyCookiesButton.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE));
 
         return this;
     }
@@ -47,7 +50,7 @@ public class CommonSteps {
     }
 
     @Step("Click on the Locations link")
-    public CommonSteps clickOnLocationsLink() {
+    public CommonSteps clickOnLocationsPageLink() {
         commonPage.locationsLink.click();
 
         return this;

@@ -8,7 +8,6 @@ public class OffersPage {
     public Locator offerBlocks;
     public Locator allCardOffersLink;
 
-    // TODO: double check locators strategy
     public OffersPage(Page page) {
         offerTypes = page.locator("//tbcx-pw-tab-menu/div/button");
         offerBlocks = page.locator("app-marketing-list div a");

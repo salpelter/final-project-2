@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.tests;
 
-import ge.tbc.testautomation.data.models.response.PageResponse;
+import ge.tbc.testautomation.data.models.response.page.PageResponse;
 import ge.tbc.testautomation.steps.ConsumerLoansSteps;
 import ge.tbc.testautomation.steps.PageApiSteps;
 import ge.tbc.testautomation.util.ValidationHelper;

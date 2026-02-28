@@ -8,9 +8,11 @@
         <parameter name="browserType" value="chrome" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsCountTest" />
             <class name="ge.tbc.testautomation.tests.IntegrationTest" />
             <class name="ge.tbc.testautomation.tests.MoneyTransferFeesTest" />
+            <class name="ge.tbc.testautomation.tests.NearbyLocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OpenBranchesTest" />
         </classes>
     </test>
     <test name="desktopFirefox">
@@ -18,9 +20,11 @@
         <parameter name="browserType" value="firefox" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsCountTest" />
             <class name="ge.tbc.testautomation.tests.IntegrationTest" />
             <class name="ge.tbc.testautomation.tests.MoneyTransferFeesTest" />
+            <class name="ge.tbc.testautomation.tests.NearbyLocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OpenBranchesTest" />
         </classes>
     </test>
     <test name="desktopWebkit">
@@ -28,9 +32,11 @@
         <parameter name="browserType" value="webkit" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsCountTest" />
             <class name="ge.tbc.testautomation.tests.IntegrationTest" />
             <class name="ge.tbc.testautomation.tests.MoneyTransferFeesTest" />
+            <class name="ge.tbc.testautomation.tests.NearbyLocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OpenBranchesTest" />
         </classes>
     </test>
 
@@ -40,9 +46,11 @@
         <parameter name="browserType" value="firefox" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsCountTest" />
             <class name="ge.tbc.testautomation.tests.IntegrationTest" />
             <class name="ge.tbc.testautomation.tests.MoneyTransferFeesTest" />
+            <class name="ge.tbc.testautomation.tests.NearbyLocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OpenBranchesTest" />
         </classes>
     </test>
     <test name="mobileWebkit">
@@ -50,9 +58,11 @@
         <parameter name="browserType" value="webkit" />
         <classes>
             <class name="ge.tbc.testautomation.tests.OffersTest" />
-            <class name="ge.tbc.testautomation.tests.LocationsTest" />
+            <class name="ge.tbc.testautomation.tests.LocationsCountTest" />
             <class name="ge.tbc.testautomation.tests.IntegrationTest" />
             <class name="ge.tbc.testautomation.tests.MoneyTransferFeesTest" />
+            <class name="ge.tbc.testautomation.tests.NearbyLocationsTest" />
+            <class name="ge.tbc.testautomation.tests.OpenBranchesTest" />
         </classes>
     </test>
 

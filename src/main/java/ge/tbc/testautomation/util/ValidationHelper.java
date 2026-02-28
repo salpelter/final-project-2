@@ -1,9 +1,9 @@
 package ge.tbc.testautomation.util;
 
-import ge.tbc.testautomation.data.models.response.ListItem;
+import ge.tbc.testautomation.data.models.response.page.ListItem;
 import ge.tbc.testautomation.data.models.response.PageNotFoundResponse;
-import ge.tbc.testautomation.data.models.response.PageResponse;
-import ge.tbc.testautomation.data.models.response.SectionComponentsItem;
+import ge.tbc.testautomation.data.models.response.page.PageResponse;
+import ge.tbc.testautomation.data.models.response.page.SectionComponentsItem;
 import org.testng.Assert;
 
 import java.util.ArrayList;

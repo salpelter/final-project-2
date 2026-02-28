@@ -18,7 +18,7 @@ public class CommonPage {
     // but only one is visible at a time
     public CommonPage(Page page) {
         navPersonalTab = page.locator(".tbcx-pw-navigation-item",
-                new Page.LocatorOptions().setHasText("ჩემთვის"))
+                        new Page.LocatorOptions().setHasText("ჩემთვის"))
                 .filter(new Locator.FilterOptions().setVisible(true));
 
         menuOffersLink = page.locator(".tbcx-pw-mega-menu-quick-acitons-item",

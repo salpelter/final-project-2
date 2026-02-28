@@ -1,15 +1,15 @@
-package ge.tbc.testautomation.data.models.response;
+package ge.tbc.testautomation.data.models.response.page;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class Link {
+public class ItemsItem {
 	@JsonProperty("$id")
 	private String id;
 
 	@JsonProperty("$type")
-	private String type;
+	private String metaType;
 
 	@JsonProperty("$updatedAt")
 	private String updatedAt;

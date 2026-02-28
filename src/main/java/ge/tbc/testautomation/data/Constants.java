@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.data;
 
-// TODO: double check there are no other constants left
+// TODO: double check constants
 public class Constants {
     public static final String HOME_PAGE_URL = "https://tbcbank.ge";
 

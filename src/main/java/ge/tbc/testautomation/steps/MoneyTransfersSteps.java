@@ -88,7 +88,7 @@ public class MoneyTransfersSteps {
                     .setState(WaitForSelectorState.VISIBLE)
                     .setTimeout(10000));
         }
-        catch(TimeoutError e) {
+        catch (TimeoutError e) {
             System.out.println("No transfer options for the given sum, currency and/or country.");
         }
 

@@ -1,10 +1,11 @@
-package ge.tbc.testautomation.data.models.response;
+package ge.tbc.testautomation.data.models.response.page;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class SectionComponentsItem {
+public class Breadcrumbs {
 	@JsonProperty("$id")
 	private String id;
 
@@ -17,9 +18,9 @@ public class SectionComponentsItem {
 	@JsonProperty("key")
 	private String key;
 
-	@JsonProperty("type")
-	private String type;
+	@JsonProperty("items")
+	private List<ItemsItem> items;
 
-	@JsonProperty("inputs")
-	private Inputs inputs;
+	@JsonProperty("showBackground")
+	private boolean showBackground;
 }

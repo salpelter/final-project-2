@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 @Test(description = "Validate location data in Locations")
 @Epic("Locations")
 @Feature("Branch/ATM search")
-public class LocationsTest extends BaseTest {
+public class LocationsCountTest extends BaseTest {
     @BeforeClass
     public void initialize() {
         locationsSteps = new LocationsSteps(page);
@@ -21,7 +21,7 @@ public class LocationsTest extends BaseTest {
     public void goToLocationsPage() {
         commonSteps
                 .openMenu(isMobile)
-                .clickOnLocationsLink();
+                .clickOnLocationsPageLink();
     }
 
     @Test(priority = 2, dependsOnMethods = "goToLocationsPage",

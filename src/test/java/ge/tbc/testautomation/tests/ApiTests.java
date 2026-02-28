@@ -1,12 +1,11 @@
 package ge.tbc.testautomation.tests;
 
-import com.github.javafaker.Faker;
 import ge.tbc.testautomation.data.models.response.PageNotFoundResponse;
-import ge.tbc.testautomation.data.models.response.PageResponse;
+import ge.tbc.testautomation.data.models.response.page.PageResponse;
 import ge.tbc.testautomation.steps.PageApiSteps;
 import ge.tbc.testautomation.util.ValidationHelper;
 import io.qameta.allure.*;
-import org.testng.annotations.BeforeClass;
+import net.datafaker.Faker;
 import org.testng.annotations.Test;
 
 import static ge.tbc.testautomation.data.Constants.CONSUMER_LOANS_PAGE_ID;

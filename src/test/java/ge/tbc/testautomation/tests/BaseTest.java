@@ -1,11 +1,13 @@
 package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.Geolocation;
 import ge.tbc.testautomation.steps.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static ge.tbc.testautomation.data.Constants.HOME_PAGE_URL;
@@ -35,7 +37,7 @@ public class BaseTest {
         // so to actually emulate viewport size below, tests needs to run in headless
         // also, in headed mode visual regression tests are affected because there's
         // an additional 15px of width allocated for the scrollbar
-        // options.setHeadless(false); // TODO: comment out
+        // options.setHeadless(false);
 
         if (browserType.equalsIgnoreCase("chrome")) {
             browser = playwright.chromium().launch(options);
@@ -65,6 +67,10 @@ public class BaseTest {
         }
         else {
             var context = browser.newContext(contextOptions
+                    // page is being rendered inside a smaller physical window
+                    // and playwright is forcing a larger css viewport inside it
+                    // so explicitly setting a resolution offsets the page visually,
+                    // although tests normally run without issues
                     .setViewportSize(1920, 1080)
             );
 
@@ -79,7 +85,7 @@ public class BaseTest {
                     .verifyDenyCookiesButtonVisibility()
                     .clickOnDenyCookiesButton();
         }
-        catch(TimeoutError e) {}
+        catch (TimeoutError e) {}
     }
 
     @AfterClass
