@@ -4,9 +4,16 @@ create table if not exists locations (
     expected_min_results int
 );
 
-insert into locations
-    (area, expected_min_results)
-select 'რუსთაველის გამზ.', 12
+-- just a makeshift way, for demonstration purposes only
+insert into locations (area, expected_min_results)
+select new.area, new.expected_min_results
+from (values
+          ('რუსთაველის გამზ.', 12),
+          ('პეკინის გამზ.', 2),
+          ('ვაჟა-ფშაველას გამზ.', 19)
+     ) as new(area, expected_min_results)
 where not exists (
-    select 1 from locations where area = 'რუსთაველის გამზ.'
+    select 1
+    from locations as original
+    where original.area = new.area
 );

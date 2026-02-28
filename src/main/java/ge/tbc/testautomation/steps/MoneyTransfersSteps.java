@@ -6,6 +6,7 @@ import com.microsoft.playwright.TimeoutError;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import ge.tbc.testautomation.data.Constants;
 import ge.tbc.testautomation.pages.MoneyTransfersPage;
+import io.qameta.allure.Step;
 
 import java.util.Random;
 
@@ -22,18 +23,21 @@ public class MoneyTransfersSteps {
         rand = new Random();
     }
 
+    @Step("Scroll to the money transfer fees calculator")
     public MoneyTransfersSteps scrollToMoneyTransferFeesCalculator() {
         moneyTransfersPage.moneyTransferFeesTab.scrollIntoViewIfNeeded();
 
         return this;
     }
 
+    @Step("Click on the money transfer fees calculator tab")
     public MoneyTransfersSteps clickOnMoneyTransferFeesCalculator() {
         moneyTransfersPage.moneyTransferFeesTab.click();
 
         return this;
     }
 
+    @Step("Select a random currency from the dropdown")
     public MoneyTransfersSteps clickOnRandomCurrency() {
         moneyTransfersPage.currencyDropdown.click();
 
@@ -47,6 +51,7 @@ public class MoneyTransfersSteps {
         return this;
     }
 
+    @Step("Enter a random transfer sum into the input field")
     public MoneyTransfersSteps enterRandomTransferSum() {
         var randomTransferSum = rand.nextDouble(Constants.CURRENCY_UPPER_BOUND);
 
@@ -62,6 +67,7 @@ public class MoneyTransfersSteps {
         return this;
     }
 
+    @Step("Select a random country from the dropdown")
     public MoneyTransfersSteps clickOnRandomCountry() {
         moneyTransfersPage.countryDropdown.click();
 
@@ -75,6 +81,7 @@ public class MoneyTransfersSteps {
         return this;
     }
 
+    @Step("Verify that transfer fee results are displayed or log their absence")
     public MoneyTransfersSteps verifyResults() {
         try {
             moneyTransfersPage.transferFeeResults.first().waitFor(new Locator.WaitForOptions()

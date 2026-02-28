@@ -17,6 +17,7 @@ public class BaseTest {
 
     protected CommonSteps commonSteps;
     protected OffersSteps offersSteps;
+    protected OfferSteps offerSteps;
     protected LocationsSteps locationsSteps;
     protected ConsumerLoansSteps consumerLoansSteps;
     protected MoneyTransfersSteps moneyTransfersSteps;
@@ -34,7 +35,7 @@ public class BaseTest {
         // so to actually emulate viewport size below, tests needs to run in headless
         // also, in headed mode visual regression tests are affected because there's
         // an additional 15px of width allocated for the scrollbar
-         options.setHeadless(false); // TODO: comment out
+        // options.setHeadless(false); // TODO: comment out
 
         if (browserType.equalsIgnoreCase("chrome")) {
             browser = playwright.chromium().launch(options);

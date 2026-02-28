@@ -2,6 +2,7 @@ package ge.tbc.testautomation.steps;
 
 import com.microsoft.playwright.Page;
 import ge.tbc.testautomation.pages.ConsumerLoansPage;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ConsumerLoansSteps {
         consumerLoansPage = new ConsumerLoansPage(page);
     }
 
+    @Step("Retrieve all page titles from the consumer loans page")
     public ConsumerLoansSteps retrievePageTitles() {
         consumerLoansPage.titles.first().hover();
         this.titles = consumerLoansPage.titles.allInnerTexts();
@@ -24,6 +26,7 @@ public class ConsumerLoansSteps {
         return this;
     }
 
+    @Step("Retrieve all list items from the consumer loans page")
     public ConsumerLoansSteps retrievePageListItems() {
         consumerLoansPage.listItems.first().hover();
         this.listItems = consumerLoansPage.listItems.allInnerTexts();
