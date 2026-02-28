@@ -18,14 +18,14 @@ public class ConsumerLoansSteps {
     }
 
     public ConsumerLoansSteps retrievePageTitles() {
-        consumerLoansPage.titles.nth(0).hover();
+        consumerLoansPage.titles.first().hover();
         this.titles = consumerLoansPage.titles.allInnerTexts();
 
         return this;
     }
 
     public ConsumerLoansSteps retrievePageListItems() {
-        consumerLoansPage.listItems.nth(0).hover();
+        consumerLoansPage.listItems.first().hover();
         this.listItems = consumerLoansPage.listItems.allInnerTexts();
 
         return this;

@@ -35,7 +35,7 @@ public class OffersSteps {
     }
 
     public OffersSteps pickRandomOffer() {
-        offersPage.offerBlocks.nth(0).hover();
+        offersPage.offerBlocks.first().hover();
 
         var offersCount = offersPage.offerBlocks.count();
 

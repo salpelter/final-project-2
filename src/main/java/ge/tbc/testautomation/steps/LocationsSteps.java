@@ -27,13 +27,13 @@ public class LocationsSteps {
         locationsPage.inputField.fill(area);
         page.waitForTimeout(1000);
 
-        locationsPage.addresses.nth(0).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
+        locationsPage.addresses.first().waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 
         return this;
     }
 
     public LocationsSteps countAvailableLocations() {
-        locationsPage.addresses.nth(0).hover();
+        locationsPage.addresses.first().hover();
         this.actualLocationsCount = locationsPage.addresses.count();
 
         return this;

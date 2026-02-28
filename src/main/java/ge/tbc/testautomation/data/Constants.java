@@ -19,4 +19,6 @@ public class Constants {
 
     public static final String LANGUAGE_PATH = "/ka";
     public static final String CONSUMER_LOANS_PATH = "/loans/consumer-loan";
+
+    public static final double CURRENCY_UPPER_BOUND = 100_000.0;
 }

@@ -46,4 +46,16 @@ public class CommonSteps {
 
         return this;
     }
+
+    public CommonSteps unfoldOtherProductsSection() {
+        commonPage.otherProductsSection.click();
+
+        return this;
+    }
+
+    public CommonSteps clickOnMoneyTransfersPageLink() {
+        commonPage.moneyTransfersLink.click();
+
+        return this;
+    }
 }

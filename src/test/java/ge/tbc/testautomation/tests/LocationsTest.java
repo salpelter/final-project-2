@@ -7,11 +7,12 @@ import org.testng.annotations.Test;
 import static ge.tbc.testautomation.data.Constants.AREA;
 
 // TODO: don't forget zephyr scenario id here in @Test
-public class LocationsTests extends BaseTest {
+public class LocationsTest extends BaseTest {
     @BeforeClass
     public void initialize() {
         locationsSteps = new LocationsSteps(page);
     }
+
     @Test(priority = 1)
     public void goToLocationsPage() {
         commonSteps
