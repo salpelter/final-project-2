@@ -1,0 +1,50 @@
+{
+  "id": "backstop-chrome",
+  "viewports": [
+    {
+      "label": "mobile_iphone_16_plus",
+      "width": 430,
+      "height": 932
+    },
+    {
+      "label": "desktop_full_hd",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "onBeforeScript": "playwright/onBefore.js",
+  "onReadyScript": "playwright/onReady.js",
+  "scenarios": [
+    {
+      "label": "TBC Offers page",
+      "url": "https://tbcbank.ge/ka/offers/all-offers?segment=All&filters=ProductType!TBCCard,TBCConceptCard",
+      "delay": 3000,
+      "removeSelectors": [
+        "app-marketing-list",
+        "app-quick-action-button"
+      ],
+      "hideSelectors": [],
+      "postInteractionWait": 0,
+      "selectors": ["document"],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": false
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report"
+  },
+  "report": ["browser"],
+  "engine": "playwright",
+  "engineOptions": {
+    "browser": "chromium"
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
